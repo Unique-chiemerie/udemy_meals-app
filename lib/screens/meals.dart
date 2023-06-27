@@ -5,19 +5,18 @@ import 'package:udemy_app2/models/meal.dart';
 import 'package:udemy_app2/widgets/meal_item.dart';
 
 class Mealscreen extends StatelessWidget {
-  const Mealscreen(
-      {super.key,
-      required this.meals,
-      this.title,
-      required this.ontoggleFavourite});
+  const Mealscreen({
+    super.key,
+    required this.meals,
+    this.title,
+  });
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) ontoggleFavourite;
+
   void selectMeal(BuildContext context, Meal meal) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => MealDetailsScreen(
-          ontoggleFavourite: ontoggleFavourite,
           meal: meal,
         ),
       ),
